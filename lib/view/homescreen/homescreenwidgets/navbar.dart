@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:hellastore/constant/appconstant.dart';
+import 'package:hellastore/view/homescreen/homescreen.dart';
 
 class NavBar extends StatelessWidget {
-  final dynamic skafoldky;
+  final Size div;
   final bool st;
-  const NavBar({
+  GlobalKey<ScaffoldState> skafoldky;
+  NavBar({
     Key? key,
-    required this.skafoldky,
+    required this.div,
     required this.st,
+    required this.skafoldky,
   }) : super(key: key);
 
   @override
@@ -37,8 +41,13 @@ class NavBar extends StatelessWidget {
               )),
           Expanded(
             child: Center(
-              child: Image.asset(
-                "assets/images/logo.png",
+              child: InkWell(
+                onTap: () {
+                  Get.offAll(() => HomeScreen());
+                },
+                child: Image.asset(
+                  "assets/images/logo.png",
+                ),
               ),
             ),
           ),

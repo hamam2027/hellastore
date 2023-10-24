@@ -1,64 +1,78 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+// import 'package:flutter/material.dart';
+// import 'package:get/get.dart';
 
-import 'package:hellastore/constant/appconstant.dart';
-import 'package:hellastore/view/homepage/screens/homescreen.dart';
+// import 'package:hellastore/constant/appconstant.dart';
+// import 'package:hellastore/view/homepage/homepagewidgets/customdrawer.dart';
+// import 'package:hellastore/view/homescreen/homescreenwidgets/navbar.dart';
+// import 'package:hellastore/view/homescreen/homescreen.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({super.key});
-  final GlobalKey<ScaffoldState> skafoldky = GlobalKey();
- final bool divic = GetPlatform.isWeb;
+// class HomePage extends StatelessWidget {
+//   HomePage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    Size div = MediaQuery.of(context).size;
-    return Scaffold(
-        // floatingActionButton: Padding(
-        //   padding: const EdgeInsets.only(bottom: 100, left: 10, right: 10),
-        //   child: FloatingActionButton(
-        //     backgroundColor: Colors.transparent,
-        //     onPressed: () {},
-        //     hoverColor: Appconstant.secandcolor,
-        //     child: Image.asset("assets/images/watslogo.png"),
-        //   ),
-        // ),
-        bottomNavigationBar: !divic
-            ? BottomNavigationBar(
-                selectedIconTheme:
-                    const IconThemeData(size: 35, color: Colors.blue),
-                unselectedIconTheme:
-                    const IconThemeData(size: 25, color: Colors.black),
-                unselectedItemColor: Colors.black,
-                showSelectedLabels: true,
-                showUnselectedLabels: true,
-                selectedItemColor: Colors.blue,
-                items: const [
-                    BottomNavigationBarItem(
-                        label: "my accont",
-                        icon: Icon(
-                          Icons.home,
-                        )),
-                    BottomNavigationBarItem(
-                        label: "my accont",
-                        icon: Icon(
-                          Icons.home,
-                        )),
-                    BottomNavigationBarItem(
-                        label: "my accont", icon: Icon(Icons.person)),
-                    BottomNavigationBarItem(
-                        label: "my accont", icon: Icon(Icons.person)),
-                  ])
-            : null,
-        backgroundColor: Appconstant.primerycolor.withOpacity(0.9),
-        drawer: Drawer(
-            width: div.width >= 1000 ? div.width * 0.3 : div.width * 0.60),
-        key: skafoldky,
-        body: SafeArea(
-            child: HomeScreen(
-          skafoldky: skafoldky,
-        )));
-  }
-}
+//   final bool divic = GetPlatform.isWeb;
+//   final GlobalKey<ScaffoldState> scafoldky = GlobalKey();
+//   @override
+//   Widget build(BuildContext context) {
+//     Size div = MediaQuery.of(context).size;
+//     var st = div.width >= 1000;
+//     return Scaffold(
+//            key: scafoldky,
+
+//         // floatingActionButton: Padding(
+//         //   padding: const EdgeInsets.only(bottom: 100, left: 10, right: 10),
+//         //   child: FloatingActionButton(
+//         //     backgroundColor: Colors.transparent,
+//         //     onPressed: () {},
+//         //     hoverColor: Appconstant.secandcolor,
+//         //     child: Image.asset("assets/images/watslogo.png"),
+//         //   ),
+//         // ),
+//         bottomNavigationBar: !divic
+//             ? BottomNavigationBar(
+//                 selectedIconTheme:
+//                     const IconThemeData(size: 35, color: Colors.blue),
+//                 unselectedIconTheme:
+//                     const IconThemeData(size: 25, color: Colors.black),
+//                 unselectedItemColor: Colors.black,
+//                 showSelectedLabels: true,
+//                 showUnselectedLabels: true,
+//                 selectedItemColor: Colors.blue,
+//                 items: const [
+//                     BottomNavigationBarItem(
+//                         label: "my accont",
+//                         icon: Icon(
+//                           Icons.home,
+//                         )),
+//                     BottomNavigationBarItem(
+//                         label: "my accont",
+//                         icon: Icon(
+//                           Icons.home,
+//                         )),
+//                     BottomNavigationBarItem(
+//                         label: "my accont", icon: Icon(Icons.person)),
+//                     BottomNavigationBarItem(
+//                         label: "my accont", icon: Icon(Icons.person)),
+//                   ])
+//             : null,
+//         backgroundColor: Appconstant.primerycolor.withOpacity(0.9),
+//         drawer: CustomDrawer(div: div),
+//         // key: skafoldky,
+//         body: SafeArea(
+       
+//             child: Column(
+//               children: [
+//                 NavBar(
+//                   st: st,
+//                   div: div,
+//                   skafoldky: scafoldky,
+//                 ),
+//                 Expanded(
+//                   child: HomeScreen(),
+//                 )
+//               ],
+//             )));
+//   }
+// }
 
 // import 'package:carousel_slider/carousel_slider.dart';
 // import 'package:flutter/material.dart';
